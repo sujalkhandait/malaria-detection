@@ -1,0 +1,28 @@
+# === Python Cache & Compiled Files ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === Virtual Environments (Crucial to ignore) ===
+malaria_env/
+venv/
+.venv/
+env/
+ENV/
+
+# === OS & IDE Specific Files ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# === App Specific Uploads ===
+# Prevents testing images you upload in the browser from bloating your Git history
+static/uploads/*
+# Keep the uploads folder itself, but ignore the files inside it
+!static/uploads/.gitkeep
+
+# === Large ML Models / Logs (Optional) ===
+# Only uncomment the line below if you prefer to host your model elsewhere 
+# instead of committing it directly to GitHub.
+# *.keras

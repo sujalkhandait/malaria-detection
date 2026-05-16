@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MalariaScope - AI Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="dark">
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">🧬 MalariaScope</div>
+    <div class="status">● System Online</div>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>🧬<span>AI-Powered</span><br>Malaria Detection</h1>
+    <p>Clinical-grade accuracy • Real-time analysis • Instant results</p>
+
+    <div class="stats">
+        <div class="stat-box">
+            <h2>93%</h2>
+            <p>🎯 Validation Accuracy</p>
+        </div>
+        <div class="stat-box">
+            <h2>~2-4s</h2>
+            <p>⚡ Average Analysis Time</p>
+        </div>
+        <div class="stat-box">
+            <h2>2 Classes</h2>
+            <p>🩺 Detection Categories</p>
+        </div>
+    </div>
+</div>
+
+<!-- UPLOAD SECTION -->
+<div class="upload-section">
+
+    <h2>📤 Upload Blood Cell Image</h2>
+    <p>Drag & drop or click to browse • Supports PNG, JPG, JPEG</p>
+
+    <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form">
+        
+        <label class="upload-box">
+            <input type="file" name="file" id="fileInput" required hidden>
+            <div class="upload-content">
+                <div class="upload-icon">⬆</div>
+                <p>Drop your microscopic image here</p>
+                <span>or click to select from your device</span>
+                <div class="file-types">
+                    <span>PNG</span>
+                    <span>JPG</span>
+                    <span>JPEG</span>
+                </div>
+                <p id="fileName" class="file-name"></p>
+            </div>
+        </label>
+
+        <button type="submit" class="analyze-btn">
+            🔬 Analyze Sample
+        </button>
+
+    </form>
+
+</div>
+
+
+<footer>
+    © 2026 MalariaScope AI | Powered by Deep Learning & TensorFlow
+</footer>
+<div style="
+    margin-top:40px;
+    padding:15px;
+    background:rgba(255,255,255,0.05);
+    border-radius:10px;
+    font-size:13px;
+    opacity:0.7;
+">
+    ⚠ Disclaimer: This AI system is developed for educational purposes only.
+    It is not intended for clinical or medical diagnosis.
+</div>
+<script>
+const fileInput = document.getElementById("fileInput");
+const fileNameDisplay = document.getElementById("fileName");
+
+fileInput.addEventListener("change", function() {
+    if (this.files.length > 0) {
+        fileNameDisplay.textContent = "✅ Selected: " + this.files[0].name;
+    }
+});
+</script>
+</body>
+</html>
